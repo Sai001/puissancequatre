@@ -1,4 +1,4 @@
-part of plane;
+part of puissancequatre;
 
 class Cell {
   int row, column;

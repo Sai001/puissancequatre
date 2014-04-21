@@ -4,7 +4,7 @@ import 'package:puissancequatre/puissancequatre.dart';
 
 main() {
   // model
-  var grid = new SquareGrid(7);
+  var grid = new Grid(7, 6);
   // view
   new Board(grid, querySelector('#canvas')).draw();  
   //boutons pour colonnes : bc1 = bouton pour colonne 1, etc..

@@ -1,4 +1,4 @@
-part of geo;
+part of puissancequatre;
 
 class Surface {
   num width, height; // in pixels
