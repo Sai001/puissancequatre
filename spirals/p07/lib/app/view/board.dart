@@ -44,9 +44,7 @@ class Board extends Surface {
           colonne1[c1row] = 1;
           new Circle(this, cx, cy, cellSize/2).drawred();
           lastPlay = Grid.RED;
-         
-          cell.textColor  = RED_COLOR;
-          
+          cell.textColor  = RED_COLOR;  
         } else {
             cell.text = Grid.BLUE;
             colonne1[c1row] = 2;
