@@ -27,25 +27,33 @@ class Board extends Surface {
     int c5row = 5;
     int c6row = 5;
     int c7row = 5;
+
      
     for (Cell cell in grid.cells) cell.textSize  = 32;
    
     //Acteurs pour les boutons.
     //B1.
     bc1.onMouseDown.listen((MouseEvent e) {  
-      int column = 0;         
+      int column = 0;    
+      int cx = 100 * column + 50;//Circle x.
+      int cy = c1row * 100 + 50;//Circle y.
       Cell cell = grid.cell(c1row, column);
       if (cell.text == null) {
         if (lastPlay == Grid.BLUE) {
           cell.text = Grid.RED;
           colonne1[c1row] = 1;
+          new Circle(this, cx, cy, cellSize/2).drawred();
           lastPlay = Grid.RED;
+         
           cell.textColor  = RED_COLOR;
+          
         } else {
             cell.text = Grid.BLUE;
             colonne1[c1row] = 2;
+            new Circle(this, cx, cy, cellSize/2).drawblue();
             lastPlay = Grid.BLUE;
             cell.textColor  = BLUE_COLOR;
+            
           }
         }
        checkplayerwin();
@@ -54,17 +62,21 @@ class Board extends Surface {
         
      //B2.
      bc2.onMouseDown.listen((MouseEvent e) {           
-       int column = 1;          
+       int column = 1;
+       int cx = 100 * column + 50;
+       int cy = c2row * 100 + 50;
        Cell cell = grid.cell(c2row, column);
        if (cell.text == null) {
          if (lastPlay == Grid.BLUE) {
            cell.text = Grid.RED;
            colonne2[c2row] = 1;
+           new Circle(this, cx, cy, cellSize/2).drawred();
            lastPlay = Grid.RED;
            cell.textColor  = RED_COLOR;
          } else {
              cell.text = Grid.BLUE;
              colonne2[c2row] = 2;
+             new Circle(this, cx, cy, cellSize/2).drawblue();
              lastPlay = Grid.BLUE;
              cell.textColor  = BLUE_COLOR;
            }
@@ -76,16 +88,20 @@ class Board extends Surface {
      //B3.
      bc3.onMouseDown.listen((MouseEvent e) {   
        int column = 2;
+       int cx = 100 * column + 50;
+       int cy = c3row * 100 + 50;
        Cell cell = grid.cell(c3row, column);
        if (cell.text == null) {
          if (lastPlay == Grid.BLUE) {
            cell.text = Grid.RED;
            colonne3[c3row] = 1;
+           new Circle(this, cx, cy, cellSize/2).drawred();
            lastPlay = Grid.RED;
            cell.textColor  = RED_COLOR;
          } else {
              cell.text = Grid.BLUE;
              colonne3[c3row] = 2;
+             new Circle(this, cx, cy, cellSize/2).drawblue();
              lastPlay = Grid.BLUE;
              cell.textColor  = BLUE_COLOR;
            }
@@ -97,16 +113,20 @@ class Board extends Surface {
      //B4.
      bc4.onMouseDown.listen((MouseEvent e) { 
        int column = 3;
+       int cx = 100 * column + 50;
+       int cy = c4row * 100 + 50;
        Cell cell = grid.cell(c4row, column);
        if (cell.text == null) {
          if (lastPlay == Grid.BLUE) {
            cell.text = Grid.RED;
            colonne4[c4row] = 1;
+           new Circle(this, cx, cy, cellSize/2).drawred();
            lastPlay = Grid.RED;
            cell.textColor  = RED_COLOR;
          } else {
              cell.text = Grid.BLUE;
              colonne4[c4row] = 2;
+             new Circle(this, cx, cy, cellSize/2).drawblue();
              lastPlay = Grid.BLUE;
              cell.textColor  = BLUE_COLOR;
            }
@@ -118,16 +138,20 @@ class Board extends Surface {
       //B5.
      bc5.onMouseDown.listen((MouseEvent e) {
        int column = 4; 
+       int cx = 100 * column + 50;
+       int cy = c5row * 100 + 50;
        Cell cell = grid.cell(c5row, column);
        if (cell.text == null) {
          if (lastPlay == Grid.BLUE) {
            cell.text = Grid.RED;
            colonne5[c5row] = 1;
+           new Circle(this, cx, cy, cellSize/2).drawred();
            lastPlay = Grid.RED;
            cell.textColor  = RED_COLOR;
          } else {
              cell.text = Grid.BLUE;
              colonne5[c5row] = 2;
+             new Circle(this, cx, cy, cellSize/2).drawblue();
              lastPlay = Grid.BLUE;
              cell.textColor  = BLUE_COLOR;
            }
@@ -139,17 +163,20 @@ class Board extends Surface {
     //B6.
     bc6.onMouseDown.listen((MouseEvent e) {
       int column = 5;
-     
+      int cx = 100 * column + 50;
+      int cy = c6row * 100 + 50;
       Cell cell = grid.cell(c6row, column);
       if (cell.text == null) {
         if (lastPlay == Grid.BLUE) {
           cell.text = Grid.RED;
           colonne6[c6row] = 1;
+          new Circle(this, cx, cy, cellSize/2).drawred();
           lastPlay = Grid.RED;
           cell.textColor  = RED_COLOR;
         } else {
           cell.text = Grid.BLUE;
           colonne6[c6row] = 2;
+          new Circle(this, cx, cy, cellSize/2).drawblue();
           lastPlay = Grid.BLUE;
           cell.textColor  = BLUE_COLOR;
         }
@@ -161,16 +188,20 @@ class Board extends Surface {
     //B7.
     bc7.onMouseDown.listen((MouseEvent e) {
       int column = 6;
+      int cx = 100 * column + 50;
+      int cy = c7row * 100 + 50;
       Cell cell = grid.cell(c7row, column);
       if (cell.text == null) {
         if (lastPlay == Grid.BLUE) {
           cell.text = Grid.RED;
           colonne7[c7row] = 1;
+          new Circle(this, cx, cy, cellSize/2).drawred();
           lastPlay = Grid.RED;
           cell.textColor  = RED_COLOR;
         } else {
             cell.text = Grid.BLUE;
             colonne7[c7row] = 2;
+            new Circle(this, cx, cy, cellSize/2).drawblue();
             lastPlay = Grid.BLUE;
             cell.textColor  = BLUE_COLOR;
           }

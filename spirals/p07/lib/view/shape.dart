@@ -6,11 +6,27 @@ class Circle {
 
   Circle(this.surface, this.x, this.y, this.radius);
 
-  draw() {
+  drawred() {
     surface.context
+        ..beginPath()
         ..arc(x, y, radius, 0, PI * 2)
+        ..fillStyle = 'red'
+        ..fill()
+        ..lineWidth = 1
+        //..strokeStyle = '#ff0000'
         ..stroke();
   }
+  drawblue() {
+      surface.context
+          ..beginPath()
+          ..arc(x, y, radius, 0, PI * 2)
+          ..fillStyle = 'blue'
+          ..fill()
+          ..lineWidth = 1
+        //  ..strokeStyle = '#0000ff'
+          ..stroke();
+    }
+  
 }
 
 class Rectangle {
