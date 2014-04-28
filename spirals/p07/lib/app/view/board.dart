@@ -34,24 +34,27 @@ class Board extends Surface {
     //Acteurs pour les boutons.
     //B1.
     bc1.onMouseDown.listen((MouseEvent e) {  
+      if (c1row == -1) { 
+        c1row = 0;
+        window.alert('Column is full!');
+      }
       int column = 0;    
-      int cx = 100 * column + 50;//Circle x.
-      int cy = c1row * 100 + 50;//Circle y.
+      double cx = cellSize * column + cellSize / 2;//Circle x.
+      double cy = c1row * cellSize + cellSize / 2;//Circle y.
       Cell cell = grid.cell(c1row, column);
       if (cell.text == null) {
         if (lastPlay == Grid.BLUE) {
           cell.text = Grid.RED;
           colonne1[c1row] = 1;
-          new Circle(this, cx, cy, cellSize/2).drawred();
+          new Circle(this, cx, cy, cellSize / 2).drawred();
           lastPlay = Grid.RED;
           cell.textColor  = RED_COLOR;  
         } else {
             cell.text = Grid.BLUE;
             colonne1[c1row] = 2;
-            new Circle(this, cx, cy, cellSize/2).drawblue();
+            new Circle(this, cx, cy, cellSize / 2).drawblue();
             lastPlay = Grid.BLUE;
-            cell.textColor  = BLUE_COLOR;
-            
+            cell.textColor  = BLUE_COLOR;   
           }
         }
        checkplayerwin();
@@ -60,21 +63,25 @@ class Board extends Surface {
         
      //B2.
      bc2.onMouseDown.listen((MouseEvent e) {           
+       if (c2row == -1) { 
+         c2row = 0;
+         window.alert('Column is full!');
+       }
        int column = 1;
-       int cx = 100 * column + 50;
-       int cy = c2row * 100 + 50;
+       double cx = cellSize * column + cellSize / 2;
+       double cy = cellSize * c2row + cellSize / 2;
        Cell cell = grid.cell(c2row, column);
        if (cell.text == null) {
          if (lastPlay == Grid.BLUE) {
            cell.text = Grid.RED;
            colonne2[c2row] = 1;
-           new Circle(this, cx, cy, cellSize/2).drawred();
+           new Circle(this, cx, cy, cellSize / 2).drawred();
            lastPlay = Grid.RED;
            cell.textColor  = RED_COLOR;
          } else {
              cell.text = Grid.BLUE;
              colonne2[c2row] = 2;
-             new Circle(this, cx, cy, cellSize/2).drawblue();
+             new Circle(this, cx, cy, cellSize / 2).drawblue();
              lastPlay = Grid.BLUE;
              cell.textColor  = BLUE_COLOR;
            }
@@ -84,22 +91,26 @@ class Board extends Surface {
      });
 
      //B3.
-     bc3.onMouseDown.listen((MouseEvent e) {   
+     bc3.onMouseDown.listen((MouseEvent e) { 
+       if (c3row == -1) { 
+         c3row = 0;
+         window.alert('Column is full!');
+       }
        int column = 2;
-       int cx = 100 * column + 50;
-       int cy = c3row * 100 + 50;
+       double cx = cellSize * column + cellSize / 2;
+       double cy = cellSize * c3row + cellSize / 2;
        Cell cell = grid.cell(c3row, column);
        if (cell.text == null) {
          if (lastPlay == Grid.BLUE) {
            cell.text = Grid.RED;
            colonne3[c3row] = 1;
-           new Circle(this, cx, cy, cellSize/2).drawred();
+           new Circle(this, cx, cy, cellSize / 2).drawred();
            lastPlay = Grid.RED;
            cell.textColor  = RED_COLOR;
          } else {
              cell.text = Grid.BLUE;
              colonne3[c3row] = 2;
-             new Circle(this, cx, cy, cellSize/2).drawblue();
+             new Circle(this, cx, cy, cellSize / 2).drawblue();
              lastPlay = Grid.BLUE;
              cell.textColor  = BLUE_COLOR;
            }
@@ -109,22 +120,26 @@ class Board extends Surface {
      });     
         
      //B4.
-     bc4.onMouseDown.listen((MouseEvent e) { 
+     bc4.onMouseDown.listen((MouseEvent e) {
+       if (c4row == -1) { 
+         c4row = 0;
+         window.alert('Column is full!');
+       }
        int column = 3;
-       int cx = 100 * column + 50;
-       int cy = c4row * 100 + 50;
+       double cx = cellSize * column + cellSize / 2;
+       double cy = cellSize * c4row + cellSize / 2;
        Cell cell = grid.cell(c4row, column);
        if (cell.text == null) {
          if (lastPlay == Grid.BLUE) {
            cell.text = Grid.RED;
            colonne4[c4row] = 1;
-           new Circle(this, cx, cy, cellSize/2).drawred();
+           new Circle(this, cx, cy, cellSize / 2).drawred();
            lastPlay = Grid.RED;
            cell.textColor  = RED_COLOR;
          } else {
              cell.text = Grid.BLUE;
              colonne4[c4row] = 2;
-             new Circle(this, cx, cy, cellSize/2).drawblue();
+             new Circle(this, cx, cy, cellSize / 2).drawblue();
              lastPlay = Grid.BLUE;
              cell.textColor  = BLUE_COLOR;
            }
@@ -133,23 +148,27 @@ class Board extends Surface {
          c4row--;
      });             
        
-      //B5.
+     //B5.
      bc5.onMouseDown.listen((MouseEvent e) {
+       if (c5row == -1) { 
+         c5row = 0;
+         window.alert('Column is full!');
+       }
        int column = 4; 
-       int cx = 100 * column + 50;
-       int cy = c5row * 100 + 50;
+       double cx = cellSize * column + cellSize / 2;
+       double cy = cellSize * c5row + cellSize / 2;
        Cell cell = grid.cell(c5row, column);
        if (cell.text == null) {
          if (lastPlay == Grid.BLUE) {
            cell.text = Grid.RED;
            colonne5[c5row] = 1;
-           new Circle(this, cx, cy, cellSize/2).drawred();
+           new Circle(this, cx, cy, cellSize / 2).drawred();
            lastPlay = Grid.RED;
            cell.textColor  = RED_COLOR;
          } else {
              cell.text = Grid.BLUE;
              colonne5[c5row] = 2;
-             new Circle(this, cx, cy, cellSize/2).drawblue();
+             new Circle(this, cx, cy, cellSize / 2).drawblue();
              lastPlay = Grid.BLUE;
              cell.textColor  = BLUE_COLOR;
            }
@@ -160,21 +179,25 @@ class Board extends Surface {
     
     //B6.
     bc6.onMouseDown.listen((MouseEvent e) {
+      if (c6row == -1) { 
+        c6row = 0;
+        window.alert('Column is full!');
+      }
       int column = 5;
-      int cx = 100 * column + 50;
-      int cy = c6row * 100 + 50;
+      double cx = cellSize * column + cellSize / 2;
+      double cy = cellSize * c6row + cellSize / 2;
       Cell cell = grid.cell(c6row, column);
       if (cell.text == null) {
         if (lastPlay == Grid.BLUE) {
           cell.text = Grid.RED;
           colonne6[c6row] = 1;
-          new Circle(this, cx, cy, cellSize/2).drawred();
+          new Circle(this, cx, cy, cellSize / 2).drawred();
           lastPlay = Grid.RED;
           cell.textColor  = RED_COLOR;
         } else {
           cell.text = Grid.BLUE;
           colonne6[c6row] = 2;
-          new Circle(this, cx, cy, cellSize/2).drawblue();
+          new Circle(this, cx, cy, cellSize / 2).drawblue();
           lastPlay = Grid.BLUE;
           cell.textColor  = BLUE_COLOR;
         }
@@ -185,21 +208,25 @@ class Board extends Surface {
     
     //B7.
     bc7.onMouseDown.listen((MouseEvent e) {
+      if (c7row == -1) { 
+        c7row = 0;
+        window.alert('Column is full!');
+      }
       int column = 6;
-      int cx = 100 * column + 50;
-      int cy = c7row * 100 + 50;
+      double cx = cellSize * column + cellSize / 2;
+      double cy = cellSize * c7row + cellSize / 2;
       Cell cell = grid.cell(c7row, column);
       if (cell.text == null) {
         if (lastPlay == Grid.BLUE) {
           cell.text = Grid.RED;
           colonne7[c7row] = 1;
-          new Circle(this, cx, cy, cellSize/2).drawred();
+          new Circle(this, cx, cy, cellSize / 2).drawred();
           lastPlay = Grid.RED;
           cell.textColor  = RED_COLOR;
         } else {
             cell.text = Grid.BLUE;
             colonne7[c7row] = 2;
-            new Circle(this, cx, cy, cellSize/2).drawblue();
+            new Circle(this, cx, cy, cellSize / 2).drawblue();
             lastPlay = Grid.BLUE;
             cell.textColor  = BLUE_COLOR;
           }
@@ -209,7 +236,6 @@ class Board extends Surface {
     });                 
     window.animationFrame.then(gameLoop);
   }
-  
   gameLoop(num delta) {
     draw();
     window.animationFrame.then(gameLoop);

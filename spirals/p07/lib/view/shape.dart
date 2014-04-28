@@ -13,7 +13,6 @@ class Circle {
         ..fillStyle = 'red'
         ..fill()
         ..lineWidth = 1
-        //..strokeStyle = '#ff0000'
         ..stroke();
   }
   drawblue() {
@@ -23,7 +22,6 @@ class Circle {
           ..fillStyle = 'blue'
           ..fill()
           ..lineWidth = 1
-        //  ..strokeStyle = '#0000ff'
           ..stroke();
     }
   
